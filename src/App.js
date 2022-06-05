@@ -1,21 +1,35 @@
 import Title from './components/Title';
-import IsOpenedTitle from "./components/IsOpenedTitle";
 import './App.css';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 function App() {
 
     return (
-        <div>
-          <Title name="Hello, Anna" type = "bold" />
-          <Title name="Hello, Marta" />
-
-            <IsOpenedTitle />
-        </div>
+        <IsOpenedTitle />
   );
 }
-Title.propTypes = {
-    name: PropTypes.string,
-    type: PropTypes.string
+
+const IsOpenedTitle = () =>{
+    const [open, setOpened] = useState(false);
+
+    const handleOpen = () => {
+        setOpened(true);
+    };
+
+    if(open === true){
+        return (
+            <div>
+                <Title name="Hello, Anna" type = "bold" />
+                <Title name="Hello, Marta" />
+            </div>
+        )
+    }
+    return <button onClick={handleOpen}>Open title</button>;
 }
+
 export default App;
+
+
+
+

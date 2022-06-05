@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Title = ({ name,  type="normal" }) => {
 
         return (
@@ -6,4 +8,8 @@ const Title = ({ name,  type="normal" }) => {
             </p>
         );
 };
+Title.propTypes = {
+    name: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(["normal","bold"])
+}
 export default Title;
