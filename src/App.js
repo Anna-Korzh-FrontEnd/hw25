@@ -5,12 +5,6 @@ import { useState } from 'react';
 
 function App() {
 
-    return (
-        <IsOpenedTitle />
-  );
-}
-
-const IsOpenedTitle = () =>{
     const [open, setOpened] = useState(false);
 
     const handleOpen = () => {
@@ -27,7 +21,6 @@ const IsOpenedTitle = () =>{
     }
     return <button onClick={handleOpen}>Open title</button>;
 }
-
 export default App;
 
 
